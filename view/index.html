@@ -1,64 +1,51 @@
-<h1><b> Licensing Information!!</b></h1>
+<h1><b> Sharepoint CRUD Opeation!!</b></h1>
 
 <div ng-app="SharePointAngApp" class="row">
     <div ng-controller="spCustomerController" class="span10">
 
-
-        <input type="text" class="textbox" ng-model="q" placeholder="Search Items">
-
-
-        <table class="table table-condensed table-hover">
-            <thead>
-                <tr>
-                    <th>Company Name</th>
-                    <th>Manufacturer Name</th>
-                    <th>Product Name</th>
-                    <th>Sales Order Number</th>
-                    <th>PO No</th>
-
-                    <th>Created</th>
-                    <th>Created By</th>
-                    <th>Modified</th>
-                    <th>Blob Items</th>
-                    <th style="width:20px;"> </th>
-                    <th style="width:40px;"> </th>
-
-
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr ng-repeat="customer in customers | filter:q">
-                    <td>{{customer.CompanyName0.Company_x0020_Name}}</td>
-                    <td>{{customer.ManufacturerName0.Manufacturer_x0020_Name}}</td>
-                    <td>{{customer.ProductName}}</td>
-
-                    <td>{{customer.SalesOrderNumber}}</td>
-                    <td>{{customer.PONo}}</td>
-
-                    <td>{{customer.Created}}</td>
-
-                    <td>{{customer.Author.Title}}</td>
-
-                    <td>{{customer.Modified}}</td>
-
-                    <td><a href="{{customer.AttachmentFiles.results[0].ServerRelativeUrl}}">{{customer.AttachmentFiles.results[0].FileName}}</a>
-                        <input type="file" name="fileToUpload" id="fileToUpload{{$index}}" onchange="angular.element(this).scope().uploadAttachment(this, {{customer.ID}})">
-                    </td>
+        <div class="options">
+            <label class="option">
+        <input type="radio" name="company" value="apple" checked>
+        <div class="option-content">
+            <h1 class="animated bounceIn"><i class="ion-social-apple-outline"></i></h1>
+            <h4>APPLE</h4>
+            <h4><i class="ion-android-radio-button-on"></i></h4>
+        </div>
+        <div class="on-checked"></div>
+    </label>
+            <label class="option">
+        <input type="radio" name="company" value="facebook">
+        <div class="option-content">
+            <h1 class="animated bounceIn"><i class="ion-social-facebook-outline"></i></h1>
+            <h4>FACEBOOK</h4>
+            <h4><i class="ion-android-radio-button-on"></i></h4>
+        </div>
+        <div class="on-checked"></div>
+    </label>
+            <label class="option">
+        <input type="checkbox" name="social" value="tumblr" checked>
+        <div class="option-content">
+            <h1 class="animated bounceIn"><i class="ion-social-tumblr-outline"></i></h1>
+            <h4>TUMBLR</h4>
+            <h4><i class="ion-android-checkbox-outline"></i></h4>
+        </div>
+        <div class="on-checked"></div>
+    </label>
+            <label class="option">
+        <input type="checkbox" name="social" value="twitter">
+        <div class="option-content">
+            <h1 class="animated bounceIn"><i class="ion-social-twitter-outline"></i></h1>
+            <h4>TWITTER</h4>
+            <h4><i class="ion-android-checkbox-outline"></i></h4>
+        </div>
+        <div class="on-checked"></div>
+    </label>
+        </div>
 
 
-                    <td><b><a ng-click="editUser(customer)" >Edit</a></b></td>
-                    <td><b><a ng-click="Delete(customer)" >Delete</a><b></td></tbody>  
-                
-                         
-  
-                 
-                 
-                  
-                </tr>    
-  
-   
-  
-        </table>
+
+
+
+
     </div>
 </div>
