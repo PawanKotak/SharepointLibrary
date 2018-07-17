@@ -1,0 +1,64 @@
+<h1><b> Licensing Information!!</b></h1>
+
+<div ng-app="SharePointAngApp" class="row">
+    <div ng-controller="spCustomerController" class="span10">
+
+
+        <input type="text" class="textbox" ng-model="q" placeholder="Search Items">
+
+
+        <table class="table table-condensed table-hover">
+            <thead>
+                <tr>
+                    <th>Company Name</th>
+                    <th>Manufacturer Name</th>
+                    <th>Product Name</th>
+                    <th>Sales Order Number</th>
+                    <th>PO No</th>
+
+                    <th>Created</th>
+                    <th>Created By</th>
+                    <th>Modified</th>
+                    <th>Blob Items</th>
+                    <th style="width:20px;"> </th>
+                    <th style="width:40px;"> </th>
+
+
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr ng-repeat="customer in customers | filter:q">
+                    <td>{{customer.CompanyName0.Company_x0020_Name}}</td>
+                    <td>{{customer.ManufacturerName0.Manufacturer_x0020_Name}}</td>
+                    <td>{{customer.ProductName}}</td>
+
+                    <td>{{customer.SalesOrderNumber}}</td>
+                    <td>{{customer.PONo}}</td>
+
+                    <td>{{customer.Created}}</td>
+
+                    <td>{{customer.Author.Title}}</td>
+
+                    <td>{{customer.Modified}}</td>
+
+                    <td><a href="{{customer.AttachmentFiles.results[0].ServerRelativeUrl}}">{{customer.AttachmentFiles.results[0].FileName}}</a>
+                        <input type="file" name="fileToUpload" id="fileToUpload{{$index}}" onchange="angular.element(this).scope().uploadAttachment(this, {{customer.ID}})">
+                    </td>
+
+
+                    <td><b><a ng-click="editUser(customer)" >Edit</a></b></td>
+                    <td><b><a ng-click="Delete(customer)" >Delete</a><b></td></tbody>  
+                
+                         
+  
+                 
+                 
+                  
+                </tr>    
+  
+   
+  
+        </table>
+    </div>
+</div>
