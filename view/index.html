@@ -150,59 +150,46 @@ p {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+/*Sharepoint CSS*/
+#sideNavBox,#s4-titlerow{
+      display:none !important;
+}
+
 
 
 </style>
-
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
 
 <h1><b> Sharepoint  CRUD Opeation using REST Api   !!</b></h1>
 
-<div ng-app="SharePointAngApp" class="row">
-    <div ng-controller="spCustomerController" class="span10">
 
-        <div class="options">
-            <label class="option">
-        <input type="radio" name="company" value="create" >
-        <div class="option-content">
-            <h1 class="animated bounceIn"><i class="ion-social-apple-outline"></i></h1>
-            <h4>CREATE</h4>
-            <h4><i class="ion-android-radio-button-on"></i></h4>
-        </div>
-        <div class="on-checked"></div>
-    </label>
-            <label class="option">
-        <input type="radio" name="company" value="read">
-        <div class="option-content">
-            <h1 class="animated bounceIn"><i class="ion-social-facebook-outline"></i></h1>
-            <h4>READ</h4>
-            <h4><i class="ion-android-radio-button-on"></i></h4>
-        </div>
-        <div class="on-checked"></div>
-    </label>
-            <label class="option">
-        <input type="radio" name="company" value="update" >
-        <div class="option-content">
-            <h1 class="animated bounceIn"><i class="ion-social-tumblr-outline"></i></h1>
-            <h4>UPDATE</h4>
-            <h4><i class="ion-android-checkbox-outline"></i></h4>
-        </div>
-        <div class="on-checked"></div>
-    </label>
-            <label class="option">
-        <input type="radio" name="company" value="delete">
-        <div class="option-content">
-            <h1 class="animated bounceIn"><i class="ion-social-twitter-outline"></i></h1>
-            <h4>DELETE</h4>
-            <h4><i class="ion-android-checkbox-outline"></i></h4>
-        </div>
-        <div class="on-checked"></div>
-    </label>
-        </div>
+<div ng-app="myApp" class="row">
 
+<div id="ng-view" ng-view></div>
 
+        <script>
+        var app = angular.module("myApp", ["ngRoute"]);
+        debugger;
+        app.config(function($routeProvider) {
+            $routeProvider    
+            .when("/create", {
+                templateUrl : "../SiteAssets/SharepointLibrary/view/create.html"
+                
+            })
+            .when("/read", {
+                templateUrl : "../SiteAssets/SharepointLibrary/view/read.html"
+            })
+            .when("/update", {
+                templateUrl : "../SiteAssets/SharepointLibrary/view/update.html"
+            })  
+            .when("/delete", {
+                templateUrl : "../SiteAssets/SharepointLibrary/view/delete.html"
+            })   
+           .when("/", {               
+                templateUrl : "../SiteAssets/SharepointLibrary/view/deafult.html"
+            });
+        });
+        </script>
 
-
-
-
-    </div>
 </div>
