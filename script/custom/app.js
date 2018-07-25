@@ -1,3 +1,5 @@
+"use strict";
+(function (){
 
 var app = angular.module("myApp", ["ngRoute"]);
 
@@ -21,6 +23,8 @@ app.config(function ($routeProvider) {
             templateUrl: "../SiteAssets/SharepointLibrary/view/deafult.html"
         });
 });
+
+})
 
 
 

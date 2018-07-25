@@ -13,4 +13,5 @@ Reference:
 1. Single page: https://scotch.io/tutorials/single-page-apps-with-angularjs-routing-and-templating
 2. https://stackoverflow.com/questions/48891452/controller-not-registering-when-using-ngroute
 3. https://www.w3schools.com/angular/angular_routing.asp
+4. Sharepoint REST : https://www.c-sharpcorner.com/article/crud-operation-in-sharepoint-using-rest-api/
 
