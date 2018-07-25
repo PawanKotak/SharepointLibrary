@@ -170,32 +170,11 @@ font-size: 30px;
 <h1><b> Sharepoint  CRUD Opeation using REST Api   !!</b></h1>
 
 
-<div ng-app="myApp" class="row">
+<div ng-app="myApp" class="row"  >
 
-<div id="ng-view" ng-view></div>
+  <div id="ng-view" ng-view></div>       
 
-        <script>
-        var app = angular.module("myApp", ["ngRoute"]);
-      
-        app.config(function($routeProvider) {
-            $routeProvider    
-            .when("/create", {
-                templateUrl : "../SiteAssets/SharepointLibrary/view/create.html"
-                
-            })
-            .when("/read", {
-                templateUrl : "../SiteAssets/SharepointLibrary/view/read.html"
-            })
-            .when("/update", {
-                templateUrl : "../SiteAssets/SharepointLibrary/view/update.html"
-            })  
-            .when("/delete", {
-                templateUrl : "../SiteAssets/SharepointLibrary/view/delete.html"
-            })   
-           .when("/", {               
-                templateUrl : "../SiteAssets/SharepointLibrary/view/deafult.html"
-            });
-        });
-        </script>
 
 </div>
+<script src="../SiteAssets/SharepointLibrary/script/custom/app.js"></script>
+<script src="../SiteAssets/SharepointLibrary/script/custom/readCtrl.js"></script>
