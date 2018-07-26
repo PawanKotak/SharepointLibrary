@@ -15,3 +15,7 @@ Reference:
 3. https://www.w3schools.com/angular/angular_routing.asp
 4. Sharepoint REST : https://www.c-sharpcorner.com/article/crud-operation-in-sharepoint-using-rest-api/
 
+
+
+Finding:
+1. Either define controller in Config with template or in HTML template give ng-Controller

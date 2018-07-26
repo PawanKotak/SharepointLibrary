@@ -1,39 +1,31 @@
 
-app.controller("readController", function ($scope) {
-    alert("hello!");
-    //getData();
+app.controller("readController", ['$scope', '$http', function ($scope, $http) {
+    
+    console.log("hello!");
 
-   angular.element(document).ready(function (){
+
+   /* angular.element(document).ready(function () {
         // Your document is ready, place your code here
         alert(_spPageContextInfo);
-    });
+        getData("Documents");
+    });*/
 
-});
+     getData("Documents");
+    // Function to Get List Data
+    function getData(listName) {
+        var siteURL = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getByTitle('" + listName + "')/items";
 
-function getData() {
-    var _spPageContextInfo = { "webAbsoluteUrl": "https://xyz.sharepoint.com/sites/TESTSITE" }
-    /* GET code*/
-    $http({
-        method: 'GET',
-
-        url: _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getByTitle('LicensingInformation')/items?$select=ID,CompanyName0/Id,CompanyName0/Company_x0020_Name,ManufacturerName0/Manufacturer_x0020_Name,ManufacturerName0/Id,Attachments,AttachmentFiles,ProductName,PONo,Created,Author/Title,Modified,SalesOrderNumber&$expand=ManufacturerName0/Manufacturer_x0020_Name, CompanyName0/Company_x0020_Name,Author/Id,AttachmentFiles",
-
-
-        headers: { "Accept": "application/json;odata=verbose" }
-
-    }).success(function (data, status, headers, config) {
+        $http.get(siteURL).
+            then(function (response) {
+                console.log(response.data);
+                //$scope.greeting = response.data;
+            });
+    }
 
 
+}]);
 
-        $scope.customers = data.d.results;
 
-
-    }).error(function (data, status, headers, config) {
-
-    });
-
-    /* End of GET code*/
-}
 
 
 

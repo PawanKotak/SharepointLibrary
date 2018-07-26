@@ -11,6 +11,7 @@
             .when("/read", {
                 templateUrl: "../SiteAssets/SharepointLibrary/view/read.html",
                 controller: "readController"
+                
             })
             .when("/update", {
                 templateUrl: "../SiteAssets/SharepointLibrary/view/update.html"
