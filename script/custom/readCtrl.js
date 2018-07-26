@@ -1,7 +1,7 @@
 var varReadController = function ($scope, $http) {
 
-   // console.log("hello!");
-    $scope.errorMessage="";
+    // console.log("hello!");
+    $scope.errorMessage = "";
 
 
     $scope.test = function () {
@@ -18,8 +18,8 @@ var varReadController = function ($scope, $http) {
             then(function (response) {
                 console.log(response.data);
                 $scope.listData = response.data.value;
-            }, function (data) {
-                $scope.errorMessage ="Something Went Wrong check in console";
+            }, function (error) {
+                $scope.errorMessage = "Error Detail: " + error.data['odata.error'].message.value;
                 console.log("Error handling");
             });
     }
