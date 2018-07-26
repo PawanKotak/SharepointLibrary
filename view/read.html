@@ -1,5 +1,20 @@
-<div   class="header">
+<div class="header">
   Read
 </div>
-<div>
+<div class="wrap">
+  <div class="search">
+    <input id="searchTerm" type="text" class="searchTerm" placeholder="Please enter Sharepoitn List Name " ng-model="searchTerm">
+    <button type="button" class="searchButton" ng-click="test()">
+        <i class="fa fa-search"></i>
+     </button>
+  </div>
+</div>
+<div style="position: relative; top: 50px;">
+  <div>Number of Item in List :{{listData.length}}</div>
+  <table>
+    <tr ng-repeat="item in listData">
+     <td>ID: {{item.ID}} Title : {{item.Title}}  </td>
+    </tr>
+  </table>
+  <div> {{errorMessage}} </div>
 </div>

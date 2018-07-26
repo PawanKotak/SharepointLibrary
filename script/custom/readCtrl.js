@@ -1,16 +1,15 @@
+var varReadController = function ($scope, $http) {
 
-app.controller("readController", ['$scope', '$http', function ($scope, $http) {
-    
-    console.log("hello!");
+   // console.log("hello!");
+    $scope.errorMessage="";
 
 
-   /* angular.element(document).ready(function () {
-        // Your document is ready, place your code here
-        alert(_spPageContextInfo);
-        getData("Documents");
-    });*/
+    $scope.test = function () {
 
-     getData("Documents");
+        getData($scope.searchTerm);
+    };
+
+
     // Function to Get List Data
     function getData(listName) {
         var siteURL = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getByTitle('" + listName + "')/items";
@@ -18,15 +17,16 @@ app.controller("readController", ['$scope', '$http', function ($scope, $http) {
         $http.get(siteURL).
             then(function (response) {
                 console.log(response.data);
-                //$scope.greeting = response.data;
+                $scope.listData = response.data.value;
+            }, function (data) {
+                $scope.errorMessage ="Something Went Wrong check in console";
+                console.log("Error handling");
             });
     }
 
+}
 
-}]);
-
-
-
+app.controller('readController', ['$scope', '$http', varReadController]);
 
 
 

@@ -14,6 +14,8 @@ Reference:
 2. https://stackoverflow.com/questions/48891452/controller-not-registering-when-using-ngroute
 3. https://www.w3schools.com/angular/angular_routing.asp
 4. Sharepoint REST : https://www.c-sharpcorner.com/article/crud-operation-in-sharepoint-using-rest-api/
+5. Dependency Injection: https://docs.angularjs.org/guide/di
+6. https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg
 
 
 
