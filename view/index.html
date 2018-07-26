@@ -10,10 +10,10 @@ html {
   max-width: 100%;
   font-size: 1rem;
   letter-spacing: 0.5px;
-  background: linear-gradient(135deg, #ff5f6d 20%, #ffc371 80%);
+  /*background: linear-gradient(135deg, #ff5f6d 20%, #ffc371 80%); */
   color: #fff;
   text-align: center;
-  font-family: 'Roboto Mono', monospace;
+  font-family: "Segoe UI Light", "Segoe UI", Segoe, Tahoma, Helvetica, Arial, sans-serif;
 }
 
 * {
@@ -24,7 +24,7 @@ html {
 h1 {
   font-size: 3em;
   font-weight: 700 !important;
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.02), 2px 2px rgba(0, 0, 0, 0.02), 3px 3px rgba(0, 0, 0, 0.02), 4px 4px rgba(0, 0, 0, 0.02), 0.125rem 0.125rem rgba(0, 0, 0, 0.02), 6px 6px rgba(0, 0, 0, 0.02), 7px 7px rgba(0, 0, 0, 0.02), 8px 8px rgba(0, 0, 0, 0.02), 9px 9px rgba(0, 0, 0, 0.02), 0.3125rem 0.3125rem rgba(0, 0, 0, 0.02), 11px 11px rgba(0, 0, 0, 0.02), 12px 12px rgba(0, 0, 0, 0.02), 13px 13px rgba(0, 0, 0, 0.02), 14px 14px rgba(0, 0, 0, 0.02), 0.625rem 0.625rem rgba(0, 0, 0, 0.02), 16px 16px rgba(0, 0, 0, 0.02), 17px 17px rgba(0, 0, 0, 0.02), 18px 18px rgba(0, 0, 0, 0.02), 19px 19px rgba(0, 0, 0, 0.02), 1.25rem 1.25rem rgba(0, 0, 0, 0.02);
+ /*  text-shadow: 1px 1px rgba(0, 0, 0, 0.02), 2px 2px rgba(0, 0, 0, 0.02), 3px 3px rgba(0, 0, 0, 0.02), 4px 4px rgba(0, 0, 0, 0.02), 0.125rem 0.125rem rgba(0, 0, 0, 0.02), 6px 6px rgba(0, 0, 0, 0.02), 7px 7px rgba(0, 0, 0, 0.02), 8px 8px rgba(0, 0, 0, 0.02), 9px 9px rgba(0, 0, 0, 0.02), 0.3125rem 0.3125rem rgba(0, 0, 0, 0.02), 11px 11px rgba(0, 0, 0, 0.02), 12px 12px rgba(0, 0, 0, 0.02), 13px 13px rgba(0, 0, 0, 0.02), 14px 14px rgba(0, 0, 0, 0.02), 0.625rem 0.625rem rgba(0, 0, 0, 0.02), 16px 16px rgba(0, 0, 0, 0.02), 17px 17px rgba(0, 0, 0, 0.02), 18px 18px rgba(0, 0, 0, 0.02), 19px 19px rgba(0, 0, 0, 0.02), 1.25rem 1.25rem rgba(0, 0, 0, 0.02); */
 }
 
 h4,
@@ -170,7 +170,7 @@ font-size: 30px;
 .searchTerm {
   float: left;
   width: 100%;
-  border: 3px solid #00B4CC;
+  border: 3px solid #0072C6;
   padding: 5px;
   height: 20px;
   border-radius: 5px;
@@ -179,7 +179,7 @@ font-size: 30px;
 }
 
 .searchTerm:focus{
-  color: #00B4CC;
+  color: #0072C6;
 }
 
 .searchButton {
@@ -187,8 +187,8 @@ font-size: 30px;
   right: -50px;
   width: 40px;
   height: 36px;
-  border: 1px solid #00B4CC;
-  background: #00B4CC;
+  border: 1px solid #0072C6;
+  background: #0072C6;
   text-align: center;
   color: #fff;
   border-radius: 5px;
@@ -205,13 +205,16 @@ font-size: 30px;
   transform: translate(-50%, -50%);
 }
 
+h4{
+ font-size: 1.5em; /*Keeping half of Main Header*/
 
+}
 </style>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" ></link>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
 
-<h1><b> <a href="#">Sharepoint  CRUD Opeation using REST Api   !!</a></b></h1>
+<h1><b> <a href="#">Basic operation using Sharepoint REST API</a></b></h1>
 
 
 <div ng-app="myApp" class="row"  >
