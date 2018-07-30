@@ -7,6 +7,7 @@ var varReadController = function ($scope, $http) {
     $scope.test = function () {
 
         getData($scope.searchTerm);
+        getField($scope.searchTerm);
     };
 
 
@@ -22,6 +23,26 @@ var varReadController = function ($scope, $http) {
                 $scope.errorMessage = "Error Detail: " + error.data['odata.error'].message.value;
                 console.log("Error handling");
             });
+    }
+
+    // Function to Get List Field
+    function getField(listName) {
+        var siteURL = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/GetByTitle('" + listName + "')/Fields";
+          $http.get(siteURL).
+            then(function (response) {
+               // console.log("Field Detail"+response.data); 
+               $scope.listField = response.data.value;
+               response.data.value.forEach(function(element) {
+                   console.log(element.Title);
+               }, this);
+
+            }, function (error) {
+                $scope.errorMessage = "Error Detail: " + error.data['odata.error'].message.value;
+                console.log("Error handling");
+            });
+
+
+
     }
 
 }
