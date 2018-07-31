@@ -6,38 +6,39 @@
   #fieldItem {
     text-align: left;
   }
-  
 </style>
 
 <div class="container">
 
   <div class="row">
 
-    <div class="header">
+    <div class=" col-lg-12">
+      <h4>
       Read
+      </h4>
     </div>
-    <div class="wrap">
-      <div class="search">
-        <input id="searchTerm" type="text" class="searchTerm" placeholder="Please enter Sharepoint List Name " ng-model="searchTerm">
-        <button type="button" class="searchButton" ng-click="test()">
+    <div class=" col-lg-12">
+      <div class="search ">
+        <input class=" searchTerm" id="searchTerm" type="text"  placeholder="Please enter Sharepoint List Name " ng-model="searchTerm">
+        <button class=" searchButton" type="button" ng-click="test()">
         <i class="fa fa-search"></i>
-     </button>
+        </button>
       </div>
     </div>
-    <div class="fieldArea">
+    <div class="fieldArea col-lg-12">
       <div class="clearFloat">
         <table id="fieldItem">
           <tr>
             <td>
-              <div class="divItem" ng-repeat="item in listField"> {{$index +1}}) {{item.Title}} <input type="checkbox" value="{{item.Title}}" id="field_{{searchTerm}}_{{$index+1}} "
+              <div class="divItem" ng-repeat="item in listField"> <b> {{$index +1}})</b> {{item.Title}} <input type="checkbox" value="{{item.Title}}" id="field_{{searchTerm}}_{{$index+1}} "
                   ng-model="listField[$index].selectCheck" /> </div>
             </td>
           </tr>
         </table>
       </div>
-      
+
     </div>
-    <div ng-show="boolShowFieldArea" >
+    <div ng-show="boolShowFieldArea" class="col-lg-12">
       <hr>
       <div class="itemSearchButton">
         <button type="button" class="searchButton" ng-click="searchItem()">
@@ -45,12 +46,12 @@
      </button>
       </div>
       <div>
-        <div class="floatLeft">Number of Item in List :{{listData.length}}</div>
+        <div class="floatLeft">Number of Item in List : <b> {{listData.length}} </b> </div>
         <div class="clearFloat">
           <table>
             <tr ng-repeat="item in listData">
 
-              <td ng-repeat="field in Fields">{{field.Name}}: {{item[field.Name]}} </td>
+              <td ng-repeat="field in Fields"> <b> {{field.Name}} </b> : {{item[field.Name]}} </td>
 
             </tr>
           </table>
