@@ -1,24 +1,21 @@
 var varReadController = function ($scope, $http) {
 
     // console.log("hello!");
-    $scope.errorMessage = "";
-
+    $scope.errorMessage = "";  
 
     $scope.test = function () {
-
         //  getData($scope.searchTerm);
         getField($scope.searchTerm);
     };
     $scope.searchItem = function () {
-
         getData($scope.searchTerm);
-
     };
-
+    $scope.boolShowFieldArea=false;
     $scope.Fields = [];
 
     // Function to Get List Data
     function getData(listName) {
+         fnReset();
         var selectedField = selectFieldInList();
         var fixed = '?$select=';
         var siteURL = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/getByTitle('" + listName + "')/items";
@@ -36,15 +33,16 @@ var varReadController = function ($scope, $http) {
 
     // Function to Get List Field
     function getField(listName) {
+         fnReset();
         var siteURL = _spPageContextInfo.webAbsoluteUrl + "/_api/web/lists/GetByTitle('" + listName + "')/Fields";
         $http.get(siteURL).
-            then(function (response) {
+            then(function (response) {               
                 // console.log("Field Detail"+response.data); 
                 $scope.listField = response.data.value;
                 response.data.value.forEach(function (element) {
                     console.log(element.Title);
                 }, this);
-
+            $scope.boolShowFieldArea = true;
             }, function (error) {
                 $scope.errorMessage = "Error Detail: " + error.data['odata.error'].message.value;
                 console.log("Error handling");
@@ -59,27 +57,19 @@ var varReadController = function ($scope, $http) {
             console.log(element.Title);
             if (element.selectCheck) {
                 fieldsFromList = fieldsFromList + element.StaticName + ',';
-
                 var temp = new Object();
                 temp["Name"] = element.StaticName;
                 $scope.Fields.push(temp);
-
             }
         });
         // Remove last ','
         fieldsFromList = fieldsFromList.substring(0, fieldsFromList.length - 1);
-
         return fieldsFromList;
     }
-
-    //function Append FieldValue
-    function appendFieldValueInList() {
-        $scope.listData.forEach(function(element){
-
-
-        });
-
-    }
+    //Function Reset Error Message
+    function fnReset(){
+        $scope.errorMessage='';
+    }  
 
 }
 

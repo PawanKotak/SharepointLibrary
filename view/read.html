@@ -4,54 +4,63 @@
   }
 
   #fieldItem {
-
     text-align: left;
+  }
+
+  .clearFloat {
+    clear: both;
   }
 </style>
 
-<div class="header">
-  Read
-</div>
-<!--<div class="three col">
-  <div class="loader" id="loader-1"></div>
-</div>-->
+<div class="container">
 
-<div class="wrap">
-  <div class="search">
-    <input id="searchTerm" type="text" class="searchTerm" placeholder="Please enter Sharepoint List Name " ng-model="searchTerm">
-    <button type="button" class="searchButton" ng-click="test()">
+  <div class="row">
+
+    <div class="header">
+      Read
+    </div>
+    <div class="wrap">
+      <div class="search">
+        <input id="searchTerm" type="text" class="searchTerm" placeholder="Please enter Sharepoint List Name " ng-model="searchTerm">
+        <button type="button" class="searchButton" ng-click="test()">
         <i class="fa fa-search"></i>
      </button>
-  </div>
-</div>
-<div style="position: relative; top: 50px;">
-  <div class="floatLeft">Number of Item in List :{{listData.length}}</div>
-  <div class="floatClear">
-
-    <table id="fieldItem">
-
-      <tr>
-        <td>
-          <div class="divItem" ng-repeat="item in listField"> {{$index +1}}) {{item.Title}} <input type="checkbox" value="{{item.Title}}" id="field_{{searchTerm}}_{{$index+1}} "
-              ng-model="listField[$index].selectCheck" /> </div>
-        </td>
-      </tr>
-    </table>
-
-  </div>
-  <div> {{errorMessage}} </div>
-</div>
-<div>
-  <button type="button" class="searchButton" ng-click="searchItem()">
+      </div>
+    </div>
+    <div class="fieldArea">
+      <div class="floatClear">
+        <table id="fieldItem">
+          <tr>
+            <td>
+              <div class="divItem" ng-repeat="item in listField"> {{$index +1}}) {{item.Title}} <input type="checkbox" value="{{item.Title}}" id="field_{{searchTerm}}_{{$index+1}} "
+                  ng-model="listField[$index].selectCheck" /> </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      
+    </div>
+    <div ng-show="boolShowFieldArea" >
+      <hr>
+      <div class="itemSearchButton">
+        <button type="button" class="searchButton" ng-click="searchItem()">
         <i class="fa fa-search"></i>
      </button>
-</div>
-<div>
-  <table>
-    <tr ng-repeat="item in listData">
+      </div>
+      <div>
+        <div class="floatLeft">Number of Item in List :{{listData.length}}</div>
+        <div class="clearFloat">
+          <table>
+            <tr ng-repeat="item in listData">
 
-      <td ng-repeat="field in Fields">{{field.Name}}: {{item[field.Name]}} </td>
+              <td ng-repeat="field in Fields">{{field.Name}}: {{item[field.Name]}} </td>
 
-    </tr>
-  </table>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div> {{errorMessage}} </div>
+  </div>
+
 </div>
