@@ -1,9 +1,12 @@
 <style>
-.divItem{
+  .divItem {
+    display: inline-block;
+  }
 
-  display:inline-block;
-  float:left;
-}
+  #fieldItem {
+
+    text-align: left;
+  }
 </style>
 
 <div class="header">
@@ -24,21 +27,31 @@
 <div style="position: relative; top: 50px;">
   <div class="floatLeft">Number of Item in List :{{listData.length}}</div>
   <div class="floatClear">
-    <table>
 
-      <tr ng-repeat="item in listData">
-        <td>ID: {{item.ID}} Title : {{item.Title}} </td>
-      </tr>
-    </table>
     <table id="fieldItem">
 
       <tr>
         <td>
-          <div class="divItem" ng-repeat="item in listField"> {{$index +1}}) {{item.Title}} <input type="checkbox" value="{{item.Title}}" id="field_{{searchTerm}}_{{$index+1}} "   /> </div>
+          <div class="divItem" ng-repeat="item in listField"> {{$index +1}}) {{item.Title}} <input type="checkbox" value="{{item.Title}}" id="field_{{searchTerm}}_{{$index+1}} "
+              ng-model="listField[$index].selectCheck" /> </div>
         </td>
       </tr>
     </table>
 
   </div>
   <div> {{errorMessage}} </div>
+</div>
+<div>
+  <button type="button" class="searchButton" ng-click="searchItem()">
+        <i class="fa fa-search"></i>
+     </button>
+</div>
+<div>
+  <table>
+    <tr ng-repeat="item in listData">
+
+      <td ng-repeat="field in Fields">{{field.Name}}: {{item[field.Name]}} </td>
+
+    </tr>
+  </table>
 </div>
