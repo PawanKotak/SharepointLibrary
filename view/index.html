@@ -296,23 +296,32 @@
 
     clear: both;
   }
+
   .clearFloat {
     clear: both;
   }
+  #contentBox{
+    margin-left:0px !important;
+  }
 </style>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"></link>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" ></link>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"></link>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
 
-<h1><b> <a href="#">Basic operation using Sharepoint REST API</a></b></h1>
+<div class="container-fluid">
+  <h1>
+    <b> 
+      <a href="#">Basic operation using Sharepoint REST API</a>
+      
+    </b>
+  </h1>
 
+  <div ng-app="myApp" class="row">
+    <div id="ng-view" ng-view></div>
 
-<div ng-app="myApp" class="row">
-
-
-  <div id="ng-view" ng-view></div>
-
-  <script src="../SiteAssets/SharepointLibrary/script/custom/app.js?1502"></script>
-  <script src="../SiteAssets/SharepointLibrary/script/custom/readCtrl.js?1502"></script>
+    
+  </div>
+    <script src="../SiteAssets/SharepointLibrary/script/custom/app.js?1502"></script>
+    <script src="../SiteAssets/SharepointLibrary/script/custom/readCtrl.js?1502"></script>
 </div>
