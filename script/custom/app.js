@@ -5,7 +5,8 @@
     app.config(function ($routeProvider) {
         $routeProvider
             .when("/create", {
-                templateUrl: "../SiteAssets/SharepointLibrary/view/create.html"
+                templateUrl: "../SiteAssets/SharepointLibrary/view/create.html",
+                controller: "createController"
 
             })
             .when("/read", {
